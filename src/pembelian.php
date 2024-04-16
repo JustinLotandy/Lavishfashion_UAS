@@ -156,6 +156,7 @@ if (isset($_POST['btnBeli'])) {
                 <option value="">Semua Kategori</option>
                 <?php foreach($kategoris as $kategori) { ?>
                     <option value="<?php echo $kategori; ?>"><?php echo $kategori; ?></option>
+    
                 <?php } ?>
             </select>
             <button class="btn btn-primary" type="submit" name="btnSearch">Cari</button>

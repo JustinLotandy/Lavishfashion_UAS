@@ -139,7 +139,7 @@ $result = mysqli_query($koneksi, $query);
                                 <th>KODE BARANG</th>
                                 <th>NAMA BARANG</th>
                                 <th>HARGA BARANG</th>
-                                <th>MODAL BARANG</th>
+                                <!--<th>MODAL BARANG</th>-->
                                 <th>JUMLAH BARANG</th>
                                 <th>KATEGORI BARANG</th>
                                 <th>AKSI</th>
@@ -155,7 +155,7 @@ $result = mysqli_query($koneksi, $query);
                                     <td><?php echo $data['kode_barang']; ?></td>
                                     <td><?php echo $data['nama_barang']; ?></td>
                                     <td><?php echo number_format($data['harga_barang']); ?></td>
-                                    <td><?php echo $data['modal_barang']; ?></td>
+                                    <!--<td> <?php echo $data['modal_barang']; ?></td>-->
                                     <td><?php echo $data['jumlah_barang']; ?></td>
                                     <td><?php echo $data['kategori_barang']; ?></td>
                                     <td>
