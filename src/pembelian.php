@@ -195,7 +195,7 @@ if (isset($_POST['btnBeli'])) {
         }
         ?>
     </div>
-
+-_-
     <script>
         function showDetail(id_barang) {
             var modal = document.getElementById('myModal_' + id_barang);
