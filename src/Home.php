@@ -180,12 +180,12 @@
   margin-top: -80px;
   color: white;
 }
-.Quote{
+.date{
   margin-left: 300px;
   margin-top: -90px;
 }
 
-.Quote p{
+.date p{
   font-size: 50px;
   color: white;
 }
@@ -252,9 +252,9 @@
       <a class="Pbarang">Profit</a>
       <div class="Jumlahangka">
         <p class = "angka"><?php include 'jumlah_profit.php'?></p>
-        <div class= "Quote">
-        <p style="margin-left:100px">Hello,</p> <br>
-        <p style="margin-left:200px" ><?php echo isset($_SESSION['nama_karyawan']) ? $_SESSION['nama_karyawan'] : ''; ?></span></p>
+        <div class= "date">
+      
+        <p style="margin-top : 40px"> <span id="hari"> </span> <span>,</span> <span id="tanggal"></span><span style="margin-left:10px" id="tanggal"></span> </p>
         </div>
        
       </div>
@@ -263,7 +263,36 @@
    
 
     <script>
-        feather.replace();
+        // Mendapatkan tanggal hari ini
+        var today = new Date();
+
+        // Array yang menyimpan nama-nama hari
+        var days = [
+            "Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"
+        ];
+
+        // Mendapatkan hari, tanggal, bulan, dan tahun
+        var dayIndex = today.getDay(); // Menggunakan indeks hari dari 0 (Minggu) hingga 6 (Sabtu)
+        var dayName = days[dayIndex];
+        var date = today.getDate();
+        var monthIndex = today.getMonth(); // Menggunakan indeks bulan dari 0 hingga 11
+        var year = today.getFullYear();
+
+        // Array yang menyimpan nama-nama bulan
+        var months = [
+            "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+            "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+        ];
+
+        // Mengambil nama bulan dari array berdasarkan indeks bulan
+        var monthName = months[monthIndex];
+
+        // Menggabungkan menjadi format tanggal yang diinginkan (misal: DD-MMMM-YYYY)
+        var formattedDate = date + ' ' + monthName + ' ' + year;
+
+        // Menyimpan nama hari dan tanggal yang diformat ke dalam elemen HTML dengan id "hari" dan "tanggal"
+        document.getElementById('hari').innerText = dayName;
+        document.getElementById('tanggal').innerText = formattedDate;
     </script>
 </body>
 
