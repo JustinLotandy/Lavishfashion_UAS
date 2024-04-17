@@ -15,60 +15,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["tambah"])) {
     $harga_barang = $_POST["harga_barang"];
     $jumlah_barang = $_POST["jumlah_barang"];
     $kategori_barang = $_POST["kategori_barang"];
+    $gambar_barang = $_POST["gambar_barang"];
 
 
   
-    if (isset($_FILES["gambar_barang"])) {
-        $target_dir = "uploads/";
-        $target_file = $target_dir . basename($_FILES["gambar_barang"]["name"]);
-        $uploadOk = 1;
-        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-
-    
-        $check = getimagesize($_FILES["gambar_barang"]["tmp_name"]);
-        if ($check === false) {
-            echo "File bukan gambar.";
-            $uploadOk = 0;
-        }
-
-      
-        if (file_exists($target_file)) {
-            echo "Maaf, file sudah ada.";
-            $uploadOk = 0;
-        }
-
- 
-        if ($_FILES["gambar_barang"]["size"] > 500000) {
-            echo "Maaf, ukuran file terlalu besar.";
-            $uploadOk = 0;
-        }
-
   
-        $allowed_formats = ["jpg", "jpeg", "png", "gif"];
-        if (!in_array($imageFileType, $allowed_formats)) {
-            echo "Maaf, hanya format JPG, JPEG, PNG, dan GIF yang diperbolehkan.";
-            $uploadOk = 0;
-        }
-
-   
-        if ($uploadOk == 1 && move_uploaded_file($_FILES["gambar_barang"]["tmp_name"], $target_file)) {
-            echo "Gambar " . htmlspecialchars(basename($_FILES["gambar_barang"]["name"])) . " berhasil diunggah.";
-            
-    
-            $query_insert = mysqli_query($koneksi, "INSERT INTO barang (kode_barang, nama_barang, harga_barang, jumlah_barang, kategori_barang, tanggal_input) VALUES ('$kode_staff', '$nama_barang', '$harga_barang', '$jumlah_barang', '$kategori_barang', '$tanggal_input')");
-            
-            if ($query_insert) {
-                echo "Data barang berhasil ditambahkan.";
-            } else {
-                echo "Maaf, terjadi kesalahan saat menyimpan data ke database.";
-            }
-        } else {
-            echo "Maaf, terjadi kesalahan saat mengunggah file.";
-        }
-    } else {
-        echo "File gambar tidak ditemukan.";
-    }
-}
 ?>
 
 <?php include 'Header.php';?>

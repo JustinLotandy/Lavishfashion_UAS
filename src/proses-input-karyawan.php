@@ -8,6 +8,7 @@ if (isset($_POST['tambah'])) {
 	$ambil_password_karyawan = md5($_POST['password_karyawan']);
 	$ambil_nama_karyawan = $_POST['nama_karyawan'];
 	$ambil_email_karyawan = $_POST['email_karyawan'];
+	
 
 	//simpan data ke database
 	$query = mysqli_query($koneksi, "INSERT INTO karyawan 
