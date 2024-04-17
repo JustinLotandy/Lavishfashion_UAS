@@ -261,7 +261,9 @@
       
     </div>
    
-
+    <script>
+    feather.replace();
+</script>
     <script>
         // Mendapatkan tanggal hari ini
         var today = new Date();
