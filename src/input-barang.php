@@ -14,52 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["tambah"])) {
     $jumlah_barang = $_POST["jumlah_barang"];
     $kategori_barang = $_POST["kategori_barang"];
     $tanggal_input = date("Y-m-d H:i:s");
-
-    // Proses upload gambar dan simpan informasi ke database
-    $target_dir = "uploads/";
-    $target_file = $target_dir . basename($_FILES["gambar_barang"]["name"]);
-    $uploadOk = 1;
-    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-
-    // Check if image file is a actual image or fake image
-    $check = getimagesize($_FILES["gambar_barang"]["tmp_name"]);
-    if ($check === false) {
-        echo "File bukan gambar.";
-        $uploadOk = 0;
-    }
-
-    // Check if file already exists
-    if (file_exists($target_file)) {
-        echo "Maaf, file sudah ada.";
-        $uploadOk = 0;
-    }
-
-    // Check file size
-    if ($_FILES["gambar_barang"]["size"] > 500000) {
-        echo "Maaf, ukuran file terlalu besar.";
-        $uploadOk = 0;
-    }
-
-    // Allow certain file formats
-    $allowed_formats = ["jpg", "jpeg", "png", "gif"];
-    if (!in_array($imageFileType, $allowed_formats)) {
-        echo "Maaf, hanya format JPG, JPEG, PNG, dan GIF yang diperbolehkan.";
-        $uploadOk = 0;
-    }
-
-    if ($uploadOk == 1 && move_uploaded_file($_FILES["gambar_barang"]["tmp_name"], $target_file)) {
-        echo "Gambar " . htmlspecialchars(basename($_FILES["gambar_barang"]["name"])) . " berhasil diunggah.";
-
-        $query_insert = mysqli_query($koneksi, "INSERT INTO barang (kode_barang, nama_barang, modal_barang, harga_barang, jumlah_barang, kategori_barang, tanggal_input, gambar_barang) VALUES ('$kode_staff', '$nama_barang', '$modal_barang', '$harga_barang', '$jumlah_barang', '$kategori_barang', '$tanggal_input', '$target_file')");
-
-        if ($query_insert) {
-            echo "Data barang berhasil ditambahkan.";
-        } else {
-            echo "Maaf, terjadi kesalahan saat menyimpan data ke database.";
-        }
-    } else {
-        echo "Maaf, terjadi kesalahan saat mengunggah file.";
-    }
 }
 ?>
 
@@ -97,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["tambah"])) {
                         <div class="card-body">
                             <p><a href="lihat-barang.php"><button class="btn btn-info">Lihat Barang</button></a></p>
                             <h4 class="card-title">Penambahan Barang</h4>
-                            <form class="forms-sample" name="input_data" method="POST" action="input-barang.php"
+                            <form class="forms-sample" name="input_data" method="POST" action="proses-input-barang.php"
                                 enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="exampleInputUsername1">Kode Barang</label>
