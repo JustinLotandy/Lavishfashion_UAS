@@ -4,7 +4,7 @@ session_start();
 
 $query = mysqli_query($koneksi, "SELECT * FROM barang");
 $kategori_query = mysqli_query($koneksi, "SELECT DISTINCT kategori_barang FROM barang");
-$kategoris = [];
+$kategoris = [];i
 while ($row = mysqli_fetch_assoc($kategori_query)) {
     $kategoris[] = $row['kategori_barang'];
 }
