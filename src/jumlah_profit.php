@@ -1,25 +1,27 @@
 <?php
 include 'koneksi.php';
 
-$query = mysqli_query($koneksi, "SELECT * FROM barang");
+// Query SQL untuk menghitung total profit per bulan
+$query = "SELECT MONTH(waktu_pembelian) AS bulan_angka, SUM(harga_barang) AS total_profit FROM pembelian GROUP BY MONTH(waktu_pembelian)";
+$result = mysqli_query($koneksi, $query);
 
-if(mysqli_num_rows($query) > 0) {
-    $total_profit = 0;
+// Penanganan kesalahan jika query gagal dieksekusi
+if (!$result) {
+    die("Query failed: " . mysqli_error($koneksi));
+}
 
-    while($data = mysqli_fetch_assoc($query)) {
-        $modal_barang = $data['modal_barang'];
-        $harga_barang = $data['harga_barang'];
+// Array untuk konversi angka bulan menjadi huruf
+$bulan_huruf = array(
+    'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+    'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
+);
 
-        // Hitung profit untuk setiap data barang
-        $profit = $harga_barang - $modal_barang;
-        
-        // Tambahkan profit ke total profit
-        $total_profit += $profit;
-    }
+// Loop untuk menampilkan hasil perhitungan profit per bulan
+while ($data = mysqli_fetch_array($result)) {
+    $bulan_angka = $data['bulan_angka']; // Ambil angka bulan dari hasil query
+    $bulan_huruf_index = $bulan_angka - 1; // Indeks array dimulai dari 0
+    $bulan_huruf_nama = $bulan_huruf[$bulan_huruf_index]; // Ambil nama bulan dari array
 
-    // Tampilkan total profit setelah mengakses semua data barang
-    echo '<div style="font-weight: bold; color: white; font-size: 30px"> ' . number_format($total_profit, 0, ',', '.') . '</div>';
-} else {
-    echo "Tidak ada data barang.";
+    echo "<p>" . $bulan_huruf_nama . ": " . number_format($data['total_profit']) . "</p>";
 }
 ?>

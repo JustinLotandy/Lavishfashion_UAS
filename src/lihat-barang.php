@@ -135,7 +135,7 @@ $result = mysqli_query($koneksi, $query);
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>Gambar Item</th>
+                                
                                 <th>KODE BARANG</th>
                                 <th>NAMA BARANG</th>
                                 <th>HARGA BARANG</th>
@@ -151,12 +151,12 @@ $result = mysqli_query($koneksi, $query);
                             while ($data = mysqli_fetch_array($result)) {
                                 ?>
                                 <tr>
-                                    <td class="py-1"><img src="<?php echo $data['gambar_barang']; ?>" alt="Gambar Barang"></td>
+                                    
                                     <td><?php echo $data['kode_barang']; ?></td>
                                     <td><?php echo $data['nama_barang']; ?></td>
-                                    <td><?php echo number_format($data['harga_barang']); ?></td>
+                                    <td style="text-align:right;" ><?php echo number_format($data['harga_barang']); ?></td>
                                     <!--<td> <?php echo $data['modal_barang']; ?></td>-->
-                                    <td><?php echo $data['jumlah_barang']; ?></td>
+                                    <td style="text-align:center;" ><?php echo $data['jumlah_barang']; ?></td>
                                     <td><?php echo $data['kategori_barang']; ?></td>
                                     <td>
                                         <a href="edit-barang.php?id=<?php echo $data['id_barang']; ?>"><button type="button" class="btn btn-warning"><i data-feather="edit"></i>&nbsp;</button></a>

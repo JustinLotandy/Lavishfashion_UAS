@@ -22,7 +22,7 @@ $email_karyawan = $_POST['email_karyawan'];
 <html>
 
 <head>
- 
+<script src="https://unpkg.com/feather-icons"></script>
     <title>Input karyawan </title>
 </head>
 <style>
@@ -96,5 +96,5 @@ $email_karyawan = $_POST['email_karyawan'];
   <!-- endinject -->
             
 </body>
-
+<script src="https://unpkg.com/feather-icons"></script>
 </html>

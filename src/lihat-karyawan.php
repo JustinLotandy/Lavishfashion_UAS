@@ -99,7 +99,6 @@ $result = mysqli_query($koneksi, $query);
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th >PITCURE PROFILE</th>
                             <th >NO.</th>
                             <th >KODE KARYAWAN</th>
                             <th >USERNAME KARYAWAN</th>
@@ -116,9 +115,6 @@ $result = mysqli_query($koneksi, $query);
                     ?>
                     <tbody>
                         <tr>
-                            <td class="py-1">
-                                <img src="../../assets/images/faces/face1.jpg" alt="image" />
-                            </td>
                             <td><?php echo $no; ?></td>
                             <td><?php echo $data['kode_karyawan']; ?></td>
                             <td><?php echo $data['username_karyawan']; ?></td>
@@ -184,7 +180,9 @@ $result = mysqli_query($koneksi, $query);
         });
     }
 </script>
-
+<script>
+    feather.replace();
+</script>
 
 </body>
 </html>

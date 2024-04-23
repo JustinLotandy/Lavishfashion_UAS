@@ -156,6 +156,13 @@
     font-size:x-large;
     font-weight: bold;
 }
+.Jumlahangka p{
+   margin-top: 20px;
+  font-size: 30px;
+  margin-top: -80px;
+  color: white;
+   
+}
 .Jumlahkaryawan{
     margin-left: 1070px;
     margin-top: 25px;
@@ -176,7 +183,7 @@
 }
 
 .angka{
-  font-size: 50px;
+  font-size: 100px;
   margin-top: -80px;
   color: white;
 }

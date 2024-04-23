@@ -71,17 +71,17 @@
 
    
 
-          <li class="nav-item nav-category">Pembelian</li>
+          <li class="nav-item nav-category">Penjualan</li>
           <li class="nav-item">
       <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
       <i data-feather="plus-square">></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <span class="menu-title">Pembelian</span>
+        <span class="menu-title">Penjualan</span>
         <i class="menu-arrow"></i>
       </a>
       <div class="collapse" id="charts">
         <ul class="nav flex-column sub-menu">
-        <li class="nav-item"> <a class="nav-link" href="./data-pembelian.php">Data Pembelian</a></li>
-                <li class="nav-item"> <a class="nav-link" href="./pembelian.php">Pembelian</a></li>
+        <li class="nav-item"> <a class="nav-link" href="./data-pembelian.php">Data Penjualan</a></li>
+                <li class="nav-item"> <a class="nav-link" href="./pembelian.php">Penjualan</a></li>
                 
         </ul>
       </div>
