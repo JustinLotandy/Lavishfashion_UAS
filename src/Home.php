@@ -255,7 +255,7 @@
        <div class="blue-bg">
         <div class="profit" >
           <div>
-      <img class="profiticon" src="./dolar.png" class="jumlahbarangicon" alt="Jumlah Barang Icon">
+     <a href="lihat-profit.php"><img class="profiticon" src="./dolar.png" class="jumlahbarangicon" alt="Jumlah Barang Icon"></a> 
       <a class="Pbarang">Profit</a>
       <div class="Jumlahangka">
         <p class = "angka"><?php include 'jumlah_profit.php'?></p>
