@@ -1,8 +1,8 @@
 <?php
 include 'koneksi.php';
 
-// Query SQL untuk menghitung total profit per bulan (harga barang dikurangi modal)
-$query = "SELECT MONTH(p.waktu_pembelian) AS bulan_angka, SUM(p.harga_barang - b.modal_barang) AS total_profit FROM pembelian p JOIN barang b ON p.id_barang = b.id_barang GROUP BY MONTH(p.waktu_pembelian)";
+// Query SQL untuk menghitung total profit per bulan
+$query = "SELECT MONTH(waktu_pembelian) AS bulan_angka, SUM(harga_barang) AS total_profit FROM pembelian GROUP BY MONTH(waktu_pembelian)";
 $result = mysqli_query($koneksi, $query);
 
 // Penanganan kesalahan jika query gagal dieksekusi
