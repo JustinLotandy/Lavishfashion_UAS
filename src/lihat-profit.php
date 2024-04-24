@@ -16,7 +16,8 @@
             margin-left: -600px;
         }
         .halo{
-            margin-left: 300px;
+            margin-left: 350px;
+            margin-top: 30px;
         }
     </style>
 </head>
