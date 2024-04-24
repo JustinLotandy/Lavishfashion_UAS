@@ -48,6 +48,7 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="./lihat-barang.php">Data Barang</a></li>
                 <li class="nav-item"> <a class="nav-link" href="./input-barang.php">Tambah Barang</a></li>
+                <li class="nav-item"> <a class="nav-link" href="./lihat-stok.php">Stok(-)</a></li>
               
               </ul>
             </div>
