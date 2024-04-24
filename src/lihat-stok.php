@@ -26,6 +26,7 @@ include 'sidebar.php';
     <div class="container">
         <h1 class="my-4">Data Barang dengan Jumlah Kurang dari 10</h1>
         <!-- Tabel untuk menampilkan data barang -->
+        <a href="input-barang.php"><button type="button" class="btn btn-info">Tambah Item</button></a>
         <table class="table table-hover">
             <thead>
                 <tr>
