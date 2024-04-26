@@ -47,7 +47,6 @@
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="./lihat-barang.php">Data Barang</a></li>
-                <li class="nav-item"> <a class="nav-link" href="./input-barang.php">Tambah Barang</a></li>
                 <li class="nav-item"> <a class="nav-link" href="./lihat-stok.php">Stok(-)</a></li>
               
               </ul>
@@ -69,9 +68,20 @@
         </ul>
       </div>
     </li>
-
-   
-
+    <li class="nav-item nav-category">Pembelian</li>
+  
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
+      <i data-feather="shopping-bag">></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="menu-title">Pembelian</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="icons">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="input-barang.php">Pembelian</a></li>
+        </ul>
+      </div>
+    </li>
           <li class="nav-item nav-category">Penjualan</li>
           <li class="nav-item">
       <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
