@@ -245,7 +245,7 @@
                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                     <a href="data-pembelian.php"><button type="button" class="shadow-box btn-block">
                       <i data-feather="credit-card" style="margin-top:-5px; margin-left:-150px" ></i>
-                    <p class="ps" style="margin-top: -20px; margin: left:-100px; ">Data Pembelian</p>
+                    <p class="ps" style="margin-top: -20px; margin: left:-100px; ">Data Penjualan</p>
                     </button></li></a>
         
     </div>
